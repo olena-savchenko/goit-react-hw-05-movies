@@ -20,7 +20,7 @@ export const StyledSearchbar = styled.div`
     rgba(196, 218, 220, 1) 19%,
     rgba(116, 182, 233, 0.6)
   );
-  /* background-color: rgba(116, 182, 233, 0.6); */
+  
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
@@ -66,10 +66,8 @@ export const StyledSearchInput = styled.input`
 
   ::placeholder {
     font: inherit;
-    /* font-size: 18px; */
-    /* font-weight: 500; */
     color:  #4c4c51;
-    /* opacity: 0.8; */
+
   }
 `;
 

@@ -22,23 +22,6 @@ export const Movies = () => {
             />
           </StyledSearchForm>
         </StyledSearchbar>
-
-        {/* <StyledSearchbar>
-          <StyledSearchForm onSubmit={handleFormSubmit}>
-            <StyledSearchInput
-              type="text"
-              autoComplete="off"
-              name="searchQuery"
-              autoFocus
-              placeholder="Search images and photos"
-              value={searchQuery}
-              onChange={handleInputChange}
-            />
-            <StyledSearchBtn type="submit">
-              <StyledSearchIcon />
-            </StyledSearchBtn>
-          </StyledSearchForm>
-        </StyledSearchbar> */}
       </main>
     );
 }

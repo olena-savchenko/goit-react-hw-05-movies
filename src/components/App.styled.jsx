@@ -14,7 +14,6 @@ export const Header = styled.header`
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
-  /* border-bottom: 1px solid black; */
   box-shadow: 0px -5px 5px -5px rgba(45, 80, 106, 0.6) inset;
 
   > nav {

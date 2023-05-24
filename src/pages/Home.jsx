@@ -13,7 +13,6 @@ const Home = () => {
       
             setMovies(trendingMovies.results);
         
-        //   setMovies(trendingMovies);
       } catch (error) {
         console.log(error);
       }
