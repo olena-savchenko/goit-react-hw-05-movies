@@ -69,6 +69,7 @@ ul {
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
 }
 
 li {

@@ -15,7 +15,7 @@ const Home = () => {
             setMovies(trendingMovies.results);
         
       } catch (error) {
-        console.log(error);
+        console.log('ПОмилка в home: ', error);
       }
     };
 
@@ -26,17 +26,21 @@ const Home = () => {
           <h1>Trending today</h1>
           <ul>{movies.map(movie => {
               return (
-                
                 <li key={movie.id}>
                   <LinkItem to={`movies/${movie.id}`}>
-                    <img
+                    {/* <img
                       src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                       alt="poster"
-                    />
+                    /> */}
+                    {movie.poster_path && (
+                      <img
+                        src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                        alt="poster"
+                      />
+                    )}
                     <StyledMovieTitle>{movie.title}</StyledMovieTitle>
                   </LinkItem>
-                    
-                  </li>
+                </li>
               );             
           })}</ul>
     </main>
