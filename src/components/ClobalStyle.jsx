@@ -61,4 +61,16 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  
+
+}
 `;
+
+

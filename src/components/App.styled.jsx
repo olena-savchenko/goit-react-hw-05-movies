@@ -41,6 +41,7 @@ export const Logo = styled(Link)`
   text-decoration: none;
   font-size: 24px;
   font-weight: 700;
-  color: rgba(116, 182, 233, 0.6);
-  text-shadow: 2px 1px 0px rgba(69, 108, 139, 0.64);
+  color: rgba(69, 108, 139, 0.64);
+  text-shadow: 2px 1px 0px rgba(116, 182, 233, 0.6);
 `;
+
