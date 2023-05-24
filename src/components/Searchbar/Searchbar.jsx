@@ -1,59 +1,28 @@
-// import { useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import {
-//   StyledSearchbar,
-//   StyledSearchForm,
-//   StyledSearchBtn,
-//   StyledSearchInput,
-//   StyledSearchIcon,
-// } from './Searchbar.styled';
+import {
+  StyledSearchbar,
+  StyledSearchForm,
+  StyledSearchInput,
+  StyledSearchBtn,
+  StyledSearchIcon,
+} from './Searchbar.styled';
 
-// const Searchbar = () => {
-// //   const [searchQuery, setSearchQuery] = useState('');
+const Searchbar = () => {
+    return (
+      <StyledSearchbar>
+        <StyledSearchForm>
+          <StyledSearchBtn type="submit">
+            <StyledSearchIcon />
+          </StyledSearchBtn>
 
-// //   // контрольований інпут
-// //   const handleInputChange = e => {
-// //     setSearchQuery(e.currentTarget.value);
-// //   };
+          <StyledSearchInput
+            type="text"
+            autoComplete="off"
+            autofocus
+            placeholder="Search movies..."
+          />
+        </StyledSearchForm>
+      </StyledSearchbar>
+    ); 
+}
 
-// //   const handleFormSubmit = e => {
-// //     e.preventDefault();
-
-// //     //заборона вводу порожнього рядка
-// //     if (searchQuery.trim() === '') {
-// //       toast.info('Enter a search name!');
-// //       return;
-// //     }
-
-// //     handleSearch(searchQuery.trim());
-// //     // очищуємо форму
-// //     setSearchQuery('');
-//   };
-
-//   return (
-//     <StyledSearchbar>
-//       <StyledSearchForm onSubmit={handleFormSubmit}>
-//         <StyledSearchInput
-//           type="text"
-//           autoComplete="off"
-//         //   name="searchQuery"
-//           autoFocus
-//           placeholder="Search images and photos"
-//           value={searchQuery}
-//         //   onChange={handleInputChange}
-//         />
-//         <StyledSearchBtn type="submit">
-//           <StyledSearchIcon />
-//         </StyledSearchBtn>
-//       </StyledSearchForm>
-//     </StyledSearchbar>
-//   );
-// };
-
-// Searchbar.propTypes = {
-//   handleSearch: PropTypes.func.isRequired,
-// };
-
-// export default Searchbar;
+export default Searchbar;

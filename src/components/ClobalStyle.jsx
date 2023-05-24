@@ -59,17 +59,26 @@ ol {
 img {
     display: block;
     max-width: 100%;
+    /* width: 100%;
+    object-fit: cover; */
     height: auto;
 }
 
 ul {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
+}
 
-  
-
+li {
+ width: calc((100% - 45px) / 4);
+ transition: transform  250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
+} 
+li:hover {
+  cursor: zoom-in;
+  transform: scale(1.03);
 }
 `;
 
