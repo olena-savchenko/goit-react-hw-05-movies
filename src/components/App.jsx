@@ -1,9 +1,9 @@
 import Home from 'pages/Home';
-import { Movies } from 'pages/Movies';
+import Movies from 'pages/Movies';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Container, Header, StyledLink} from './App.styled';
 import Logotype from '../pictures/making-video.png';
-import MovieDetails from './MovieDetails';
+import MovieDetails from '../pages/MovieDetails';
 import Cast from './Cast/Cast';
 
 export const App = () => {
@@ -11,9 +11,8 @@ export const App = () => {
     <div>
       <Container>
         <Header>
-          <Link to='/'>
+          <Link to="/">
             <img src={Logotype} alt="" width="80px" />
-            {/* <span>MovieHouse</span> */}
           </Link>
 
           <nav>
