@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { fetchTrendingMovies } from '../services/api';
 // import {Link} from 'react-router-dom'
-import { LinkItem, StyledMovieTitle } from '../components/App.styled';
+import {
+  LinkItem,
+  StyledMovieTitle,
+  StyledHomeTitle,
+} from '../components/App.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +27,7 @@ const Home = () => {
   }, []);
   return (
     <main>
-          <h1>Trending today</h1>
+          <StyledHomeTitle>Trending today</StyledHomeTitle>
           <ul>{movies.map(movie => {
               return (
                 <li key={movie.id}>

@@ -12,8 +12,8 @@ export const App = () => {
       <Container>
         <Header>
           <Logo>
-            <img src={Logotype} alt="" width="60px" />
-            <span>MovieHouse</span>
+            <img src={Logotype} alt="" width="80px" />
+            {/* <span>MovieHouse</span> */}
           </Logo>
 
           <nav>
