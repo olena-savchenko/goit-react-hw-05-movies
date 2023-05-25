@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { GlobalStyle } from 'components/ClobalStyle';
 import { App } from 'components/App';
 
-
+// перевірка
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/goit-react-hw-05-movies">
