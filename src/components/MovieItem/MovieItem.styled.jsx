@@ -18,9 +18,8 @@ export const LinkItem = styled(Link)`
   flex-direction: column;
   height: 100%;
   text-decoration: none;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
-    0 2px 1px -1px rgba(0, 0, 0, 0.12); */
-`;
+  `;
+
 
 
 export const StyledMovieTitle = styled.p`

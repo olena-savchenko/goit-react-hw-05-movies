@@ -2,6 +2,7 @@ import Section from 'components/Section/Section';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'services/api';
+import { StyledContent, StyledReviews, StyledUserName } from './Reviews.styled';
 
 const Reviews = () => {
   // отримуємо динамічне значення :movieId
@@ -12,10 +13,6 @@ const Reviews = () => {
     const getReviews = async () => {
       try {
         const { results } = await fetchMovieReviews(movieId);
-        // if (results.length === 0) {
-        //   return console.log('Обзорів на фільм немає');
-        // }
-
         setReviews(results);
       } catch (error) {
         console.log(error);
@@ -28,16 +25,16 @@ const Reviews = () => {
   return (
     <Section>
       {reviews.length ? (
-        <ul>
+        <ol>
           {reviews.map(({ id, author, content }) => {
             return (
-              <li key={id}>
-                <p>Author: {`${author}`}</p>
-                <p>{content}</p>
-              </li>
+              <StyledReviews key={id}>
+                <StyledUserName>{`${author}:`}</StyledUserName>
+                <StyledContent>{content}</StyledContent>
+              </StyledReviews>
             );
           })}
-        </ul>
+        </ol>
       ) : (
         <div> We don't have any reviews for this movie yet</div>
       )}

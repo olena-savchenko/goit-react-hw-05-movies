@@ -1,6 +1,7 @@
 
 import MovieItem from "../MovieItem/MovieItem";
 import { StyledMovieList } from "./MovieList.styled";
+import PropTypes from 'prop-types';
 
 const MovieList = ({ movies }) => {
   return (
@@ -10,5 +11,11 @@ const MovieList = ({ movies }) => {
           })}
     </StyledMovieList>
   );
+};
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired
+  })),
 };
 export default MovieList;

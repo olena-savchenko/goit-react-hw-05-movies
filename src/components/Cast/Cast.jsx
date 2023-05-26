@@ -16,14 +16,13 @@ const Cast = () => {
   // отримуємо динамічне значення :movieId
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
-  // console.log('MovieId: ', movieId);
-
+ 
   useEffect(() => {
     const fetchCast = async () => {
       try {
         const { cast } = await fetchMovieCast(movieId);
         setCast(cast);
-        console.log(cast);
+
       } catch (error) {
         console.log(error);
       }
@@ -32,36 +31,42 @@ const Cast = () => {
     fetchCast();
   }, [movieId]);
 
-  // original_name
-  // character
-  // profile_path
-
   return (
     <Section>
       <StyledActorsList>
-        {cast.map(item => {
-          return (
-            <StyledActorItem key={item.id}>
-              <StyledWrap>
-                <StyledImg
-                  src={
-                    item.profile_path
-                      ? `https://image.tmdb.org/t/p/w300${item.profile_path}`
-                      : poster
-                  }
-                  alt={`${item.original_name} poster`}
-                />
-              </StyledWrap>
+        {cast.map(
+          ({
+            id,
+            profile_path,
+            original_name,
+            name,
+            character,
+          }) => {
+            return (
+              <StyledActorItem key={id}>
+                <StyledWrap>
+                  <StyledImg
+                    src={
+                      profile_path
+                        ? `https://image.tmdb.org/t/p/w300${profile_path}`
+                        : poster
+                    }
+                    alt={`${original_name} poster`}
+                  />
+                </StyledWrap>
 
-              <div>
-                <StyledName>{item.name}</StyledName>
-                <StyledInfo>
-                  {item.character ? `Character: ${item.character}` : 'Unknown'}
-                </StyledInfo>
-              </div>
-            </StyledActorItem>
-          );
-        })}
+                <div>
+                  <StyledName>{name}</StyledName>
+                  <StyledInfo>
+                    {character
+                      ? `Character: ${character}`
+                      : 'Unknown'}
+                  </StyledInfo>
+                </div>
+              </StyledActorItem>
+            );
+          }
+        )}
       </StyledActorsList>
     </Section>
   );

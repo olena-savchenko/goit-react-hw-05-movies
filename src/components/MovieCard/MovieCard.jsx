@@ -39,7 +39,7 @@ const MovieCard = ({ movie }) => {
         {genres && (
           <>
             <h3>Genres</h3>
-            <p>{genres.map(genre => genre.name).join(', ')}</p>
+            <p>{genres.map(({name})=> name).join(', ')}</p>
           </>
         )}
       </StyledMovieInfo>

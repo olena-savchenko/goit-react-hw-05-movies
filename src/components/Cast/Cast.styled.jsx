@@ -10,9 +10,6 @@ export const StyledActorsList = styled.ul`
 
 export const StyledActorItem = styled.li`
   width: calc((100% - 70px) / 8);
-  /* display: flex; */
-  /* flex-direction: column;
-  flex-grow: 1; */
   border: 1px solid #4c4c51;
   border-radius: 4px;
 `;
