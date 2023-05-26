@@ -3,6 +3,7 @@ import Movies from 'pages/Movies';
 import { Routes, Route} from 'react-router-dom';
 import MovieDetails from '../pages/MovieDetails';
 import Cast from './Cast/Cast';
+// import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import Layout from './Layout/Layout';
 

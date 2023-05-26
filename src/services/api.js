@@ -24,15 +24,15 @@ export const fetchMovieByName = async searchQuery => {
     `${BASE_URL}search/movie?api_key=${API_KEY}&query=${searchQuery}&include_adult=false&language=en-US&page=1`
   );
   return data;
-}
+};
 
 // ЗАПИТ ПРО АКТОРСЬКИЙ СКЛАД
-export const fetchCast = async movieId => {
+export const fetchMovieCast = async movieId => {
   const { data } = await axios.get(
-    `${BASE_URL}movie/${movieId}/credits/?api_key=${API_KEY}&language=en-US`
+    `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
   );
+
   return data;
 };
 
-// 'https://api.themoviedb.org/3/movie/movie_id/credits?language=en-US'
-
+// https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1'
