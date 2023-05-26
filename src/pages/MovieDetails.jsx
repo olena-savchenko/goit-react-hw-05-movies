@@ -1,4 +1,3 @@
-// import { StyledPoster } from 'components/MovieItem/MovieItem.styled';
 import { Link, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
