@@ -82,13 +82,13 @@ const Movies = () => {
   };
 
   return (
-    <main>
+    <>
       {/* Контейнер для повідомлень про помилку запиту */}
       <ToastContainer autoClose={3000} transition={Flip} position="right" />
       <Searchbar handleSearch={handleSearch} />
       {/* <Section>{<MovieList movies={movies} />}</Section> */}
       <MovieList movies={movies} />
-    </main>
+    </>
   );
 };
 

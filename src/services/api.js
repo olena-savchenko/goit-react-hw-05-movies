@@ -26,3 +26,13 @@ export const fetchMovieByName = async searchQuery => {
   return data;
 }
 
+// ЗАПИТ ПРО АКТОРСЬКИЙ СКЛАД
+export const fetchCast = async movieId => {
+  const { data } = await axios.get(
+    `${BASE_URL}movie/${movieId}/credits/?api_key=${API_KEY}&language=en-US`
+  );
+  return data;
+};
+
+// 'https://api.themoviedb.org/3/movie/movie_id/credits?language=en-US'
+

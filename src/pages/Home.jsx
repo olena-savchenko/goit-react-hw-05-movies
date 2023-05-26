@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+  
       <Section>
         {
           <>
@@ -31,7 +31,7 @@ const Home = () => {
           </>
         }
       </Section>
-    </main>
+  
   );
 };
 

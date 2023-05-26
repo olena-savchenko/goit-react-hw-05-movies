@@ -1,11 +1,12 @@
 // import { StyledPoster } from 'components/MovieItem/MovieItem.styled';
-import { Link, Outlet } from 'react-router-dom';
+import {  Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieById } from 'services/api';
 import Section from 'components/Section/Section';
 import MovieCard from 'components/MovieCard/MovieCard';
-import { StyledTitle } from 'components/App.styled';
+// import { StyledTitle } from 'components/App.styled';
+// import Cast from 'components/Cast/Cast';
 
 const MovieDetails = () => {
   // отримуємо динамічне значення :movieId
@@ -18,7 +19,7 @@ const MovieDetails = () => {
       try {
         const data = await fetchMovieById(movieId);
         setMovieDitails(data);
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -33,25 +34,6 @@ const MovieDetails = () => {
       <Section>
         <MovieCard movie={movieDitails} />
       </Section>
-
-      {/* додаткова інформація про фільм (актори, відгуки) */}
-
-      <Section>
-        {
-          <>
-            <StyledTitle>Additional information</StyledTitle>
-            <ul>
-              <li>
-                <Link to="cast">Cast</Link>
-              </li>
-              <li>
-                <Link to="reviews">Reviews</Link>
-              </li>
-            </ul>
-          </>
-        }
-      </Section>
-
       <Outlet />
     </>
   );
