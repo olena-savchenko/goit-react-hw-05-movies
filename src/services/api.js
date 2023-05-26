@@ -35,4 +35,14 @@ export const fetchMovieCast = async movieId => {
   return data;
 };
 
+// ЗАПИТ НА REVIEWS
+
+export const fetchMovieReviews= async movieId => {
+  const { data } = await axios.get(
+    `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+  );
+
+  return data;
+};
+
 // https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1'

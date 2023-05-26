@@ -4,8 +4,9 @@ import { fetchMovieByName } from '../services/api';
 import { toast, ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MovieList from 'components/MovieList/MovieList';
-// import Section from 'components/Section/Section';
 
+// глобальні змінні для попереджень
+const WARNING_MSG = 'Sorry, there are no images matching your search query';
 const INFO_MSG = 'You just entered this search name';
 
 const Movies = () => {
@@ -22,10 +23,13 @@ const Movies = () => {
     const getMovieByName = async () => {
       try {
         const { results } = await fetchMovieByName(searchQuery);
+        // якщо запит повернув порожній масив(нічого не знайдено), виводимо повідомлення
+        if (results.length === 0) {
+          return toast.info(WARNING_MSG);
+        }
         setMovie(results);
-        console.log('Фільми по пошуку: ', results);
       } catch (error) {
-        console.log('Ошибка', error);
+        console.log(error);
       }
     };
 
@@ -84,7 +88,7 @@ const Movies = () => {
   return (
     <>
       {/* Контейнер для повідомлень про помилку запиту */}
-      <ToastContainer autoClose={3000} transition={Flip} position="right" />
+      <ToastContainer autoClose={3000} transition={Flip} position="top-center" />
       <Searchbar handleSearch={handleSearch} />
       {/* <Section>{<MovieList movies={movies} />}</Section> */}
       <MovieList movies={movies} />

@@ -1,19 +1,22 @@
-// import { StyledTitle } from 'components/Layout/Layout.styled';
-// import Section from 'components/Section/Section';
-// import { useEffect, useParams } from 'react';
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'services/api';
-import poster from 'pictures/anonimys.jpg'
-import { StyledActorItem, StyledActorsList, StyledImg, StyledInfo, StyledName, StyledWrap } from './Cast.styled';
+import poster from 'pictures/anonimys.jpg';
+import {
+  StyledActorItem,
+  StyledActorsList,
+  StyledImg,
+  StyledInfo,
+  StyledName,
+  StyledWrap,
+} from './Cast.styled';
 import Section from 'components/Section/Section';
 
 const Cast = () => {
   // отримуємо динамічне значення :movieId
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
-  console.log('MovieId: ', movieId);
+  // console.log('MovieId: ', movieId);
 
   useEffect(() => {
     const fetchCast = async () => {
