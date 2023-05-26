@@ -1,7 +1,7 @@
-import { StyledTitle } from 'components/App.styled';
+
+import { StyledTitle } from 'components/Layout/Layout.styled';
 import Section from 'components/Section/Section';
 import { useEffect, useParams } from 'react';
-// import { Link } from 'react-router-dom';
 import { fetchCast } from 'services/api';
 
 const Cast = () => {

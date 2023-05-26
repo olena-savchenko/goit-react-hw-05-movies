@@ -1,4 +1,4 @@
-import  styled from 'styled-components';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
@@ -12,8 +12,6 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  /* padding: 8px 0; */
-  /* margin-bottom: 10px; */
   box-shadow: 0px -5px 5px -5px rgba(45, 80, 106, 0.6) inset;
 
   > nav {
@@ -38,7 +36,6 @@ export const StyledLink = styled(NavLink)`
 export const StyledTitle = styled.h2`
   font-size: 18px;
   margin-bottom: 10px;
-  /* text-align: end; */
-  color:  #4c4c51;
+  color: #4c4c51;
   text-transform: uppercase;
 `;

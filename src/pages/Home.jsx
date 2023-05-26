@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { fetchTrendingMovies } from '../services/api';
 import MovieList from 'components/MovieList/MovieList';
-import { StyledTitle } from '../components/App.styled';
 import Section from 'components/Section/Section';
+import { StyledTitle } from 'components/Layout/Layout.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);

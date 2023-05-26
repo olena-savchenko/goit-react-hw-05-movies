@@ -1,7 +1,7 @@
 import { StyledPoster } from '../MovieItem/MovieItem.styled';
 import PropTypes from 'prop-types'
 import { StyledMovieCard, StyledMovieInfo } from './MovieCard.styled';
-import { StyledTitle } from 'components/App.styled';
+import { StyledTitle } from 'components/Layout/Layout.styled';
 
 const MovieCard = ({ movie }) => {
   const {

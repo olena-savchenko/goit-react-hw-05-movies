@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import Logotype from 'pictures/making-video.png';
-import { Container, Header, StyledLink } from '../App.styled';
+import { Container, Header, StyledLink } from './Layout.styled';
 
 const Layout = () => {
   return (
