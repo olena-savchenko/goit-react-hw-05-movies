@@ -3,6 +3,7 @@ import { ImSearch } from 'react-icons/im';
 
 export const StyledSearchForm = styled.form`
 margin: 0 auto;
+padding-top: 10px;
   display: flex;
   align-items: center;
   max-width: 300px;

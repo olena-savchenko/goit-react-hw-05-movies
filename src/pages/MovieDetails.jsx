@@ -1,10 +1,16 @@
-import { StyledPoster } from 'components/MovieItem/MovieItem.styled';
+// import { StyledPoster } from 'components/MovieItem/MovieItem.styled';
+import { Link, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieById } from 'services/api';
+import Section from 'components/Section/Section';
+import MovieCard from 'components/MovieCard/MovieCard';
+import { StyledTitle } from 'components/App.styled';
 
 const MovieDetails = () => {
+  // отримуємо динамічне значення :movieId
   const { movieId } = useParams();
+
   const [movieDitails, setMovieDitails] = useState({});
 
   useEffect(() => {
@@ -12,6 +18,7 @@ const MovieDetails = () => {
       try {
         const data = await fetchMovieById(movieId);
         setMovieDitails(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -20,24 +27,32 @@ const MovieDetails = () => {
     getMovieById(movieId);
   }, [movieId]);
 
-  const { poster_path, title, release_date, overview } = movieDitails;
-
   return (
     <>
-      {poster_path && (
-        <StyledPoster
-          src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
-          alt={`${title} poster`}
-        />
-      )}
+      {/* рендер картки фільму з детальним описом */}
+      <Section>
+        <MovieCard movie={movieDitails} />
+      </Section>
 
-      <h2>
-        {title}
-        {release_date}
-      </h2>
-      <h3>Overview</h3>
-      <p>{overview}</p>
-      <h3>Genres</h3>
+      {/* додаткова інформація про фільм (актори, відгуки) */}
+
+      <Section>
+        {
+          <>
+            <StyledTitle>Additional information</StyledTitle>
+            <ul>
+              <li>
+                <Link to="cast">Cast</Link>
+              </li>
+              <li>
+                <Link to="reviews">Reviews</Link>
+              </li>
+            </ul>
+          </>
+        }
+      </Section>
+
+      <Outlet />
     </>
   );
 };

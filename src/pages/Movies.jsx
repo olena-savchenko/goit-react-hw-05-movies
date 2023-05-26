@@ -4,6 +4,7 @@ import { fetchMovieByName } from '../services/api';
 import { toast, ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MovieList from 'components/MovieList/MovieList';
+// import Section from 'components/Section/Section';
 
 const INFO_MSG = 'You just entered this search name';
 
@@ -84,9 +85,9 @@ const Movies = () => {
     <main>
       {/* Контейнер для повідомлень про помилку запиту */}
       <ToastContainer autoClose={3000} transition={Flip} position="right" />
-
       <Searchbar handleSearch={handleSearch} />
-      <MovieList movies={ movies} />
+      {/* <Section>{<MovieList movies={movies} />}</Section> */}
+      <MovieList movies={movies} />
     </main>
   );
 };

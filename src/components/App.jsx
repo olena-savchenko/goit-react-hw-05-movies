@@ -5,6 +5,7 @@ import { Container, Header, StyledLink} from './App.styled';
 import Logotype from '../pictures/making-video.png';
 import MovieDetails from '../pages/MovieDetails';
 import Cast from './Cast/Cast';
+import Reviews from './Reviews/Reviews';
 
 export const App = () => {
   return (
@@ -24,9 +25,12 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
+
+          {/* маршрут з динамічним параметром */}
           <Route path="/movies/:movieId" element={<MovieDetails />}>
+            {/* вкладені маршрути */}
             <Route path="cast" element={<Cast />} />
-            {/* <Route path="reviews" element={<Reviews />} /> */}
+            <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<Home />} />
         </Routes>
